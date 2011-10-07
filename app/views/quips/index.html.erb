@@ -1,0 +1,39 @@
+<h1>Listing quips</h1>
+
+<table>
+  <tr>
+    <th>Phrase</th>
+    <th>Pubdate</th>
+    <th>Ranking</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @quips.each do |quip| %>
+  <tr>
+    <td><%= quip.phrase %></td>
+    <td><%= quip.pubdate %></td>
+    <td><%= quip.ranking %>      
+      <span class="plus"  id="plus_<%= quip.id %>" class="plus">+</span> 
+      <span class="minus" id="minus_<%= quip.id %>">-</span>
+    </td>
+    <td><%= link_to 'Show', quip %></td>
+    <td><%= link_to 'Edit', edit_quip_path(quip) %></td>
+    <td><%= link_to 'Destroy', quip, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Quip', new_quip_path %>
+
+<script type="JavaScript">
+  function update_ranking(id, data) {
+    $("#" + id).text() = data,
+    dataType: string
+  }
+</script>
+  
+  

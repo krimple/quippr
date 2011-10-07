@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Phrase:</b>
+  <%= @quip.phrase %>
+</p>
+
+<p>
+  <b>Pubdate:</b>
+  <%= @quip.pubdate %>
+</p>
+
+<p>
+  <b>Ranking:</b>
+  <%= @quip.ranking %>
+</p>
+
+
+<%= link_to 'Edit', edit_quip_path(@quip) %> |
+<%= link_to 'Back', quips_path %>
